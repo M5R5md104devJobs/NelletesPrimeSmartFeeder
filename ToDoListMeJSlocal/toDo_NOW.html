@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- Coding by prototyp@4m4tr3ss | meterman.mappingheat@gmail.com -->
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="local Web: ToDo-Liste">
+    <meta name="keywords" content="HTML, CSS, JavaScript, ToDo WM">
+    <meta name="author" content="meterman.mappingheat@gmail.com">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ToDo Liste</title>
+    <link rel="icon" type="image/x-icon" href="../media/favicons/favicon_todo.ico">
+    <link rel="stylesheet" href="css/style_toDo_NOW.css" />
+</head>
+
+<body>
+    <hr>
+    <!-- header area -->
+    <header>
+        <div class="header">
+            <div class="left">
+                <p>
+                    <img class="img2" src="../media/images/me_buddhaCartman.jpg" alt="buddhaMitch" width="120"
+                        height="120" style="vertical-align:middle;border:2px solid yellow;border-radius: 100px;">
+                </p>
+            </div>
+
+            <div class="middle">
+                <p style="margin-top: 55px;">
+                    -- ToDo-Liste: SOFORT --
+                </p>
+            </div>
+
+            <div class="right">
+                <p>
+                <div class="toggle" style="margin-top: 55px;">
+                </div>
+                </p>
+            </div>
+        </div>
+    </header>
+    <p class="clearfix">
+        <hr>
+    </p>
+
+    <!-- ToDo panel -->
+    <main>
+        <div class="panel">
+
+
+            <input type="text" id="todoInput" placeholder="Next">
+            <button onclick="addTodo()">+</button>
+
+            <ul id="ToDoList"></ul>
+        </div>
+    </main>
+    <hr>
+
+    <div>
+        <p><br></p>
+    </div>
+
+    <!-- Inline-Scripts -->
+    <script type="text/javascript">
+        const body = document.querySelector("body"),
+            toggle = document.querySelector(".toggle");
+
+        let getMode = localStorage.getItem("mode");
+        console.log("current mode: " + getMode);
+
+        if (getMode && getMode === "dark") {
+            body.classList.toggle("dark");
+            toggle.classList.toggle("active");
+        }
+
+        toggle.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            if (!body.classList.contains("dark")) {
+                return localStorage.setItem("mode", "light");
+            }
+
+            localStorage.setItem("mode", "dark");
+        });
+
+        toggle.addEventListener("click", () => toggle.classList.toggle("active"));
+    </script>
+
+    <!-- footer area -->
+    <footer>
+    </footer>
+    <script src="js/todo.js"></script>
+</body>
+
+</html>

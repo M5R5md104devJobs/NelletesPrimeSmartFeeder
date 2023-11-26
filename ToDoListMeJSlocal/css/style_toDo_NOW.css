@@ -1,0 +1,105 @@
+* {
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+}
+
+.left {
+    /* The width is 20%, by default */
+    padding: 10px;
+    float: left;
+    width: 20%;
+}
+
+.middle {
+    /* The width is 60%, by default */
+    padding: 20px;
+    float: left;
+    width: 60%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.right {
+    /* The width is 20%, by default */
+    padding: 20px;
+    float: left;
+    width: 20%;
+}
+
+/* Use a media query to add a break point at 600px: */
+@media screen and (max-width: 600px) {
+
+    /* The width is 100%, when the viewport is 600px or smaller */
+    .left,
+    .main,
+    .right {
+        width: 100%;
+    }
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+body {
+    height: 100vh;
+    background-color: #4070f4;
+    color: #ffffff;
+    transition: all 0.3s ease-in-out;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body.dark {
+    background-color: #18191a;
+    color: yellow;
+
+}
+
+.toggle {
+    position: relative;
+    height: 16px;
+    width: 80px;
+    border-radius: 100px;
+    /* background-color: red; */
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.toggle::before {
+    content: "";
+    position: absolute;
+    height: 36px;
+    width: 36px;
+    background: #4070f4;
+    border-radius: 50%;
+    top: 50%;
+    left: 8px;
+    border: 2px solid white;
+    transform: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+}
+
+.toggle.active::before {
+    background-color: #181911;
+    border: 2px solid yellow;
+    left: calc(100% - 36px - 8px);
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+hr {
+    color: yellow;
+}
+
+li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
