@@ -72,4 +72,4 @@ Mehr über [Persönliches Wissensmanagement](https://de.wikipedia.org/wiki/Pers%
 
 ## Lizenz
 
-Dieses Projekt ist gemäß den Bedingungen der [GNU Affero General Public License v3.0] (LICENSE) lizenziert.
+Dieses Projekt ist gemäß den Bedingungen der [GNU Affero General Public License v3.0](https://github.com/M5R5md104devJobs/NelletesPrimeSmartFeeder/blob/master/LICENSE) lizenziert.
